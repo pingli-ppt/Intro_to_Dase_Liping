@@ -1,0 +1,322 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>华东师范大学各专业ESI数据分析报告</title>
+        <style>
+            body { font-family: Arial, sans-serif; margin: 30px; line-height: 1.6; background-color: #f8f9fa; }
+            .container { max-width: 1400px; margin: 0 auto; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+            h1 { color: #2c3e50; text-align: center; border-bottom: 3px solid #3498db; padding-bottom: 15px; }
+            h2 { color: #34495e; border-left: 4px solid #3498db; padding-left: 15px; margin-top: 30px; }
+            .metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0; }
+            .metric-box { background: white; padding: 20px; border-radius: 8px; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-top: 4px solid #3498db; }
+            .metric-value { font-size: 2.2em; font-weight: bold; color: #3498db; margin: 10px 0; }
+            table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14px; }
+            th, td { border: 1px solid #ddd; padding: 12px; text-align: center; }
+            th { background-color: #3498db; color: white; }
+            tr:nth-child(even) { background-color: #f8f9fa; }
+            .top-100 { background-color: #fff3cd; }
+            .top-200 { background-color: #e2e3e5; }
+            .top-500 { background-color: #d1ecf1; }
+            .chart { text-align: center; margin: 30px 0; padding: 20px; background: white; border-radius: 8px; }
+            .summary { background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 25px; border-radius: 8px; margin: 20px 0; }
+            .footer { text-align: center; margin-top: 40px; color: #666; padding-top: 20px; border-top: 1px solid #ddd; }
+            .major-name { font-weight: bold; color: #2c3e50; }
+            .highlight { background: #fff3cd; padding: 15px; border-radius: 5px; margin: 10px 0; }
+            .social-science { background-color: #e8f5e8 !important; }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>📊 华东师范大学各专业ESI数据分析报告</h1>
+            
+            <div class="summary">
+                <h2>🎯 核心发现</h2>
+                <p>基于华东师范大学17个ESI学科的详细数据，分析各专业在全球的学术表现、科研产出和影响力。</p>
+                <p>涵盖了排名、论文数量、引用次数等关键指标的综合分析。</p>
+            </div>
+
+            <div class="metrics">
+                <div class="metric-box">
+                    <div class="metric-value">17</div>
+                    <div>分析专业总数</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-value">90</div>
+                    <div>最佳全球排名</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-value">622</div>
+                    <div>平均全球排名</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-value">1</div>
+                    <div>顶尖学科(前100)</div>
+                </div>
+            </div>
+            
+            <div class="highlight">
+                <h3>🏆 亮点专业</h3>
+                <p><strong>排名最佳专业</strong>: CHEMISTRY (全球第90名)</p>
+                <p><strong>论文影响力最高</strong>: MOLECULAR BIOLOGY & GENETICS (平均引用38.66次)</p>
+                <p><strong>科研产出最多</strong>: CHEMISTRY (共5420篇论文)</p>
+                <p><strong>社会科学表现</strong>: SOCIAL SCIENCES, GENERAL (全球第650名，在1888所机构中)</p>
+            </div>
+            
+            <h2>📋 各专业详细数据表</h2>
+            <table>
+                <tr>
+                    <th>专业名称</th>
+                    <th>全球排名</th>
+                    <th>总学校数</th>
+                    <th>论文数量</th>
+                    <th>引用次数</th>
+                    <th>平均引用</th>
+                    <th>全球前百分比</th>
+                    <th>水平评估</th>
+                </tr>
+    
+                <tr class="top-100">
+                    <td class="major-name">CHEMISTRY</td>
+                    <td><strong>第90名</strong></td>
+                    <td>2141</td>
+                    <td>5420</td>
+                    <td>164390</td>
+                    <td>30.33</td>
+                    <td>前4.2%</td>
+                    <td>⭐ 顶尖学科</td>
+                </tr>
+        
+                <tr class="top-200">
+                    <td class="major-name">MATHEMATICS</td>
+                    <td><strong>第115名</strong></td>
+                    <td>395</td>
+                    <td>2019</td>
+                    <td>11984</td>
+                    <td>5.94</td>
+                    <td>前29.11%</td>
+                    <td>🔶 优秀学科</td>
+                </tr>
+        
+                <tr class="top-200">
+                    <td class="major-name">ENVIRONMENT/ECOLOGY</td>
+                    <td><strong>第130名</strong></td>
+                    <td>2066</td>
+                    <td>2941</td>
+                    <td>92088</td>
+                    <td>31.31</td>
+                    <td>前6.29%</td>
+                    <td>🔶 优秀学科</td>
+                </tr>
+        
+                <tr class="top-200">
+                    <td class="major-name">MATERIALS SCIENCE</td>
+                    <td><strong>第196名</strong></td>
+                    <td>1580</td>
+                    <td>2720</td>
+                    <td>93969</td>
+                    <td>34.55</td>
+                    <td>前12.41%</td>
+                    <td>🔶 优秀学科</td>
+                </tr>
+        
+                <tr class="top-500">
+                    <td class="major-name">COMPUTER SCIENCE</td>
+                    <td><strong>第207名</strong></td>
+                    <td>863</td>
+                    <td>1803</td>
+                    <td>22336</td>
+                    <td>12.39</td>
+                    <td>前23.99%</td>
+                    <td>📊 良好学科</td>
+                </tr>
+        
+                <tr class="top-500">
+                    <td class="major-name">GEOSCIENCES</td>
+                    <td><strong>第275名</strong></td>
+                    <td>1175</td>
+                    <td>1850</td>
+                    <td>42158</td>
+                    <td>22.79</td>
+                    <td>前23.4%</td>
+                    <td>📊 良好学科</td>
+                </tr>
+        
+                <tr class="top-500">
+                    <td class="major-name">ENGINEERING</td>
+                    <td><strong>第317名</strong></td>
+                    <td>2787</td>
+                    <td>2567</td>
+                    <td>55450</td>
+                    <td>21.6</td>
+                    <td>前11.37%</td>
+                    <td>📊 良好学科</td>
+                </tr>
+        
+                <tr class="top-500">
+                    <td class="major-name">PLANT & ANIMAL SCIENCE</td>
+                    <td><strong>第395名</strong></td>
+                    <td>1950</td>
+                    <td>1375</td>
+                    <td>21843</td>
+                    <td>15.89</td>
+                    <td>前20.26%</td>
+                    <td>📊 良好学科</td>
+                </tr>
+        
+                <tr class="top-500">
+                    <td class="major-name">PSYCHIATRY/PSYCHOLOGY</td>
+                    <td><strong>第467名</strong></td>
+                    <td>1147</td>
+                    <td>1460</td>
+                    <td>15243</td>
+                    <td>10.44</td>
+                    <td>前40.71%</td>
+                    <td>📊 良好学科</td>
+                </tr>
+        
+                <tr class="">
+                    <td class="major-name">PHYSICS</td>
+                    <td><strong>第522名</strong></td>
+                    <td>995</td>
+                    <td>3495</td>
+                    <td>50802</td>
+                    <td>14.54</td>
+                    <td>前52.46%</td>
+                    <td>🌍 一般学科</td>
+                </tr>
+        
+                <tr class=" social-science">
+                    <td class="major-name">SOCIAL SCIENCES, GENERAL</td>
+                    <td><strong>第650名</strong></td>
+                    <td>1888</td>
+                    <td>1250</td>
+                    <td>15600</td>
+                    <td>12.48</td>
+                    <td>前34.43%</td>
+                    <td>🌍 一般学科</td>
+                </tr>
+        
+                <tr class="">
+                    <td class="major-name">BIOLOGY & BIOCHEMISTRY</td>
+                    <td><strong>第721名</strong></td>
+                    <td>1649</td>
+                    <td>897</td>
+                    <td>20837</td>
+                    <td>23.23</td>
+                    <td>前43.72%</td>
+                    <td>🌍 一般学科</td>
+                </tr>
+        
+                <tr class="">
+                    <td class="major-name">AGRICULTURAL SCIENCES</td>
+                    <td><strong>第845名</strong></td>
+                    <td>1381</td>
+                    <td>346</td>
+                    <td>6513</td>
+                    <td>18.82</td>
+                    <td>前61.19%</td>
+                    <td>🌍 一般学科</td>
+                </tr>
+        
+                <tr class="">
+                    <td class="major-name">NEUROSCIENCE & BEHAVIOR</td>
+                    <td><strong>第853名</strong></td>
+                    <td>1298</td>
+                    <td>771</td>
+                    <td>14295</td>
+                    <td>18.54</td>
+                    <td>前65.72%</td>
+                    <td>🌍 一般学科</td>
+                </tr>
+        
+                <tr class="">
+                    <td class="major-name">MOLECULAR BIOLOGY & GENETICS</td>
+                    <td><strong>第867名</strong></td>
+                    <td>1169</td>
+                    <td>532</td>
+                    <td>20568</td>
+                    <td>38.66</td>
+                    <td>前74.17%</td>
+                    <td>🌍 一般学科</td>
+                </tr>
+        
+                <tr class="">
+                    <td class="major-name">PHARMACOLOGY & TOXICOLOGY</td>
+                    <td><strong>第1064名</strong></td>
+                    <td>1389</td>
+                    <td>289</td>
+                    <td>5693</td>
+                    <td>19.7</td>
+                    <td>前76.6%</td>
+                    <td>🌍 一般学科</td>
+                </tr>
+        
+                <tr class="">
+                    <td class="major-name">CLINICAL MEDICINE</td>
+                    <td><strong>第2852名</strong></td>
+                    <td>6754</td>
+                    <td>940</td>
+                    <td>16875</td>
+                    <td>17.95</td>
+                    <td>前42.23%</td>
+                    <td>🌍 一般学科</td>
+                </tr>
+        
+            </table>
+            
+            <h2>📈 专业数据可视化分析</h2>
+    
+            <div class="chart">
+                <h3>专业数据热力图</h3>
+                <img src="major_heatmap.png" alt="专业数据热力图" style="max-width: 95%; border-radius: 5px;">
+            </div>
+        
+            <div class="chart">
+                <h3>专业排名分布</h3>
+                <img src="major_ranking.png" alt="专业排名分布" style="max-width: 95%; border-radius: 5px;">
+            </div>
+        
+            <div class="chart">
+                <h3>科研产出影响力</h3>
+                <img src="major_scatter.png" alt="科研产出影响力" style="max-width: 95%; border-radius: 5px;">
+            </div>
+        
+            <div style="background: #e8f4fd; padding: 20px; border-radius: 8px; margin: 20px 0;">
+                <h2>💡 数据洞察</h2>
+                <h3>优势领域:</h3>
+                <ul>
+                    <li><strong>化学(CHEMISTRY)</strong> - 全球第90名，在2141所机构中排名前4.2%</li>
+                    <li><strong>数学(MATHEMATICS)</strong> - 全球第115名，在395所机构中排名前29.1%</li>
+                    <li><strong>材料科学(MATERIALS SCIENCE)</strong> - 平均引用34.55次，论文影响力突出</li>
+                    <li><strong>社会科学(SOCIAL SCIENCES)</strong> - 全球第650名，在1888所机构中排名前34.4%</li>
+                </ul>
+                
+                <h3>改进机会:</h3>
+                <ul>
+                    <li>临床医学排名相对靠后(第2852名)，有较大提升空间</li>
+                    <li>神经科学、药理学等生命科学领域论文数量相对较少</li>
+                    <li>数学等基础学科平均引用次数较低，需提升论文影响力</li>
+                </ul>
+                
+                <h3>学科分布:</h3>
+                <ul>
+                    <li>顶尖学科(前100): 1个</li>
+                    <li>优秀学科(101-200): 3个</li>
+                    <li>良好学科(201-500): 5个</li>
+                    <li>一般学科(500+): 8个</li>
+                </ul>
+            </div>
+            
+            <div class="footer">
+                <p>⏰ 报告生成时间: 2025-10-11 20:07:43</p>
+                <p>📚 数据来源: Clarivate ESI (Essential Science Indicators)</p>
+                <p>💡 分析维度: 全球排名、论文产出、引用影响力等多维度评估</p>
+                <p>💻 分析工具: Python数据分析与可视化</p>
+                <p>📊 包含专业: 17个ESI学科，涵盖理工、医学、社会科学等领域</p>
+            </div>
+        </div>
+    </body>
+    </html>
+    
