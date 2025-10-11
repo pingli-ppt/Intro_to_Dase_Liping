@@ -12,15 +12,13 @@ from selenium.webdriver.common.keys import Keys
 # -------------------------- 基础配置 --------------------------
 TARGET_URL = "https://esi.clarivate.com/IndicatorsAction.action?app=esi&Init=Yes&authCode=null&SrcApp=IC2LS&SID=H3-ax2F2rp5xxThLx2BB9x2F5zJlJLj3D0vx2Fj5k10w-18x2dbgzAzA0Lu9wILyGpmx2Fh9wgx3Dx3D5jSx2BwWdetjXMPofSu6vNzAx3Dx3D-deDoSViHIQYUGXyhfV4d4Ax3Dx3D-ucx2FlMPFCLJrFFs0K4gTuzQx3Dx3D"
 
-# 🔴 1. 修改为你的Edge浏览器安装路径
 EDGE_PATH = r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
 
-# 🔴 2. 修改为你手动下载的msedgedriver.exe路径
-DRIVER_PATH = r"C:\Users\PPT\Downloads\msedgedriver\msedgedriver.exe"  # 示例路径，需替换为实际路径
+DRIVER_PATH = r"C:\Users\PPT\Downloads\msedgedriver\msedgedriver.exe" 
 
 ORIGINAL_HEADERS = {
     'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 Edg/141.0.0.0',
-    'cookie': '_vwo_uuid_v2=D789522C695DCD7D8FE1FD4602B319CA7|e6f04fe42646ae295e59595aaab594a8; _vwo_uuid=D789522C695DCD7D8FE1FD4602B319CA7; _vis_opt_s=1%7C; _fbp=fb.1.1759136773298.778729658773151674; _biz_uid=f60d8dc4e222421afee0a95940f0c052; ELOQUA=GUID=3F7989E921264AB5B28E088F6139C15B; _zitok=2c1e02e8403cd842d9ba1759136775; OptanonAlertBoxClosed=2025-09-29T09:06:15.709Z; _gcl_au=1.1.1770451591.1759136776; _vwo_consent=1%2C1%3A~; _vwo_ds=3%3At_0%2Ca_0%3A0%241759136771%3A41.83383465%3A%3A%3A%3A4; _clck=1cminuk%5E2%5Efzq%5E0%5E2098; _biz_flagsA=%7B%22Version%22%3A1%2C%22XDomain%22%3A%221%22%2C%22ViewThrough%22%3A%221%22%7D; OptanonConsent=isGpcEnabled=0&datestamp=Mon+Sep+29+2025+18%3A18%3A43+GMT%2B0800+(%E4%B8%AD%E5%9B%BD%E6%A0%87%E5%87%86%E6%97%B6%E9%97%B4)&version=202503.2.0&browserGpcFlag=0&isIABGlobal=false&hosts=&consentId=cb810a63-2f38-40a1-be00-7560baccd77d&interactionCount=1&isAnonUser=1&landingPath=NotLandingPage&groups=C0001%3A1%2CC0003%3A1%2CC0004%3A1%2CC0002%3A1&intType=1&geolocation=HK%3B&AwaitingReconsent=false; _biz_nA=10; _biz_pendingA=%5B%5D; _rdt_uuid=1759136773668.4003e3f7-7b06-44f1-a457-bc2022d38e32; _uetvid=8cd849c09d1311f098c4c7c1781fe1bf|d58qiz|1759141124831|7|1|bat.bing.com/p/insights/c/e; _ga_K6K0YXL6HJ=GS2.1.s1759140177$o2$g1$t1759141134$j50$l0$h1773801530; _ga_V1YLG54MGT=GS2.1.s1759140177$o2$g1$t1759141134$j50$l0$h70085599; _ga=GA1.2.572071149.1759136776; _ga_9R70GJ8HZF=GS2.1.s1759140176$o2$g1$t1759141235$j12$l0$h1804760684; __cf_bm=QuotHikxUKqLLbpIarEhjP.zmRPrXVd0t..wUTDVmq0-1760142018-1.0.1.1-RTwmy.HLPXJnlbMWOGwCrTFoSgZxSx7zmG5CSKBFApWK02TKzGEbAJPmEpPBFF6ey8rZvdDEete7ccITaPhr9pae_oFj8uIvjIY55HvyEC4; PSSID="H3-giSw8NCsV1fVdVQQBvzmx2FF0W9IGLXJHg-18x2d0LpEAytP8uLXs0XqhOfBNgx3Dx3DYP9LROQEMn4xxjb59NZy8Pgx3Dx3D-z5IhIRye0WmHCFGEsjVz6wx3Dx3D-z1QxxaOZpxxGCwkgLYEq4RcAx3Dx3D"; IC2_SID="H3-giSw8NCsV1fVdVQQBvzmx2FF0W9IGLXJHg-18x2d0LpEAytP8uLXs0XqhOfBNgx3Dx3DYP9LROQEMn4xxjb59NZy8Pgx3Dx3D-z5IhIRye0WmHCFGEsjVz6wx3Dx3D-z1QxxaOZpxxGCwkgLYEq4RcAx3Dx3D"; CUSTOMER_NAME="EAST CHINA NORMAL UNIV"; E_GROUP_NAME="IC2 Platform"; SUBSCRIPTION_GROUP_ID="260055"; SUBSCRIPTION_GROUP_NAME="EAST CHINA NORMAL UNIV_20151126590_1"; CUSTOMER_GROUP_ID="99582"; IP_SET_ID_NAME="E China Normal U"; IP_SET_ID="3204746"; ROAMING_DISABLED="true"; ACCESS_METHOD="IP"; userAuthType="TrustedIPAuth"; userAuthIDType="222.66.117.73"; esi.isLocalStorageCleared=true; _sp_ses.2f26=*; _sp_id.2f26=27436d10-f6f3-4e78-a2c0-475a25f7d4cf.1759140366.10.1760142115.1760009367.c13eedc5-391d-49b3-9720-ba697149765c; _gid=GA1.2.1570155722.1760142115; _gat=1; esi.Show=; esi.Type=; esi.FilterValue=; esi.GroupBy=; esi.FilterBy=; esi.authorsList=; esi.frontList=; esi.fieldsList=; esi.instList=; esi.journalList=; esi.terriList=; esi.titleList=; _ga_D5KRF08D0Q=GS2.2.s1760142118$o10$g0$t1760142118$j60$l0$h0; JSESSIONID=F920E7818CFE9C41E1C7EF7E6310A4A7; __cf_bm=MlgUvcXYm6PCa4B8fl0fUY5G4gigIIl4WtMhMEC0XBk-1760142131-1.0.1.1-cDVcn_QoUPKfMdV3zz0jSG_hn2g97AoPxyEnEm2MrFPKJXxX03Wta_syvb98OxhhpSc508.amnWnwa5enDw3FqCHy_Egv_IFVM83IvDTI1Q'
+    'cookie': ''
 }
 
 # -------------------------- 爬虫配置 --------------------------
@@ -184,84 +182,7 @@ def filter_research_field(driver, field_name):
             print("✅ Add Filter按钮点击成功")
             time.sleep(2.5)
             
-            # # 3. 调试：检查当前页面的所有可见弹出元素
-            # print("🔍 扫描页面上的所有弹出元素...")
-            
-            # # 查找所有可能的弹出元素
-            # popup_elements = driver.find_elements(By.CSS_SELECTOR, """
-            #     [id*='popup'], [class*='popup'], 
-            #     [id*='menu'], [class*='menu'],
-            #     [id*='dropdown'], [class*='dropdown'],
-            #     [style*='display: block'], [style*='visibility: visible'],
-            #     .select2-drop, .filter-options, .modal, .dialog
-            # """)
-            
-            # print(f"📊 找到 {len(popup_elements)} 个可能的弹出元素")
-            
-            # # 显示所有找到的弹出元素信息
-            # visible_popups = []
-            # for i, element in enumerate(popup_elements):
-            #     try:
-            #         if element.is_displayed():
-            #             element_id = element.get_attribute('id') or '无ID'
-            #             element_class = element.get_attribute('class') or '无class'
-            #             element_text = element.text.replace('\n', ' ')[:100]  # 只取前100字符
-                        
-            #             print(f"  {i+1}. ID: '{element_id}' | Class: '{element_class}'")
-            #             print(f"     文本: {element_text}")
-            #             print(f"     位置: {element.location} | 尺寸: {element.size}")
-                        
-            #             visible_popups.append(element)
-            #     except:
-            #         continue
-            
-            # print(f"👀 其中 {len(visible_popups)} 个元素是可见的")
-            
-            # # 4. 尝试识别正确的弹出菜单
-            # popup_filter = None
-            # popup_candidates = []
-            
-            # # 候选选择器（按优先级排序）
-            # popup_selectors = [
-            #     "#popupFilter",  # 标准ID
-            #     "//div[contains(@class, 'popup') and contains(@style, 'display: block')]",
-            #     "//div[contains(@class, 'dropdown-menu') and contains(@style, 'display: block')]",
-            #     "//div[contains(@class, 'select2-drop')]",
-            #     "//div[contains(@id, 'popup')]",
-            #     "//div[contains(@class, 'filter') and contains(@style, 'display: block')]",
-            #     "//div[@class='popup-content']",
-            #     "//div[contains(@class, 'menu')]"
-            # ]
-            
-            # for selector in popup_selectors:
-            #     try:
-            #         if selector.startswith("//"):
-            #             elements = driver.find_elements(By.XPATH, selector)
-            #         else:
-            #             elements = driver.find_elements(By.CSS_SELECTOR, selector)
-                    
-            #         for element in elements:
-            #             if element.is_displayed():
-            #                 popup_candidates.append(element)
-            #                 # print(f"✅ 候选弹出菜单: {selector}")
-            #     except:
-            #         continue
-            
-            # # 如果有多个候选，选择最可能的一个（通常是最大的、包含特定文本的）
-            # if popup_candidates:
-            #     # 按面积排序，选择最大的
-            #     popup_candidates.sort(key=lambda x: x.size['width'] * x.size['height'], reverse=True)
-            #     popup_filter = popup_candidates[0]
-            #     print(f"🎯 选择最大的弹出菜单: {popup_filter.size}")
-            # else:
-            #     print("❌ 未找到任何候选弹出菜单")
-            #     # if retry < RETRY_TIMES:
-            #     #     # 保存截图用于分析
-            #     #     driver.save_screenshot(f"debug_popup_issue_{field_name}_{retry}.png")
-            #     #     print("💾 已保存截图用于调试")
-            #     #     continue
-            #     # else:
-            #     #     return False
+        
             # 4. 识别弹出菜单
             popup_filter = None
             popup_selectors = [
@@ -292,27 +213,7 @@ def filter_research_field(driver, field_name):
             # 5. 现在使用找到的弹出菜单元素继续操作
             print("📋 使用找到的弹出菜单继续操作...")
             
-            # # 获取弹出菜单内容进行分析
-            # popup_html = popup_filter.get_attribute('innerHTML')
-            # popup_text = popup_filter.text
-            
-            # print(f"🔍 弹出菜单文本内容: {popup_text[:200]}...")
-            
-            # # 检查是否包含Research Fields
-            # if "Research Fields" in popup_text:
-            #     print("✅ 弹出菜单包含Research Fields")
-            # else:
-            #     print("⚠️ 弹出菜单不包含Research Fields，包含的内容:")
-            #     if "Country" in popup_text:
-            #         print("  - Country/Territory")
-            #     if "Journal" in popup_text:
-            #         print("  - Journal")
-            #     if "Author" in popup_text:
-            #         print("  - Author")
-            #     if "Institution" in popup_text:
-            #         print("  - Institution")
-            #     # 继续执行，可能文本在属性中
-            
+           
             # 6. 在找到的弹出菜单中查找Research Fields链接
             print("🔍 在弹出菜单中查找Research Fields链接...")
             research_fields_link = None
@@ -343,20 +244,6 @@ def filter_research_field(driver, field_name):
                     print(f"⚠️ 选择器失败: {selector}")
                     continue
             
-            # if not research_fields_link:
-            #     print("❌ 找不到Research Fields链接")
-            #     # 显示所有链接供调试
-            #     all_links = popup_filter.find_elements(By.TAG_NAME, "a")
-            #     print(f"🔍 弹出菜单中的所有链接({len(all_links)}个):")
-            #     for i, link in enumerate(all_links[:10]):  # 只显示前10个
-            #         link_text = link.text.replace('\n', ' ').strip()
-            #         if link_text:
-            #             print(f"  {i+1}. '{link_text}'")
-                
-            #     if retry < RETRY_TIMES:
-            #         continue
-            #     else:
-            #         return False
             
             print("🖱️ 点击Research Fields选项")
             driver.execute_script("arguments[0].click();", research_fields_link)
@@ -521,74 +408,6 @@ def filter_research_field(driver, field_name):
                     continue
                 else:
                     return False
-            # # 8. 在研究领域界面中查找目标复选框
-            # print(f"🔍 在界面中查找: {field_name}")
-            
-            # escaped_field_name = field_name.replace("&", "&amp;")
-            # field_checkbox = None
-            
-            # # 多种定位策略
-            # checkbox_strategies = [
-            #     # 策略1: 通过value属性
-            #     (f".//input[@type='checkbox' and @value='{escaped_field_name}']", "value属性"),
-            #     (f".//input[@value='{escaped_field_name}']", "value属性(简化)"),
-                
-            #     # 策略2: 通过文本标签
-            #     (f".//label[contains(text(), '{field_name}')]/preceding-sibling::input[@type='checkbox']", "label文本"),
-            #     (f".//label[contains(text(), '{field_name}')]/../input[@type='checkbox']", "label父级"),
-            #     (f".//div[contains(text(), '{field_name}')]/preceding-sibling::input[@type='checkbox']", "div文本"),
-                
-            #     # 策略3: 通过包含文本的元素
-            #     (f".//*[contains(text(), '{field_name}')]/preceding-sibling::input[@type='checkbox']", "任意元素文本"),
-                
-            #     # 策略4: 在整个文档中查找
-            #     (f"//input[@type='checkbox' and @value='{escaped_field_name}']", "全局value"),
-            #     (f"//label[contains(text(), '{field_name}')]/preceding-sibling::input[@type='checkbox']", "全局label")
-            # ]
-            
-            # for xpath, strategy in checkbox_strategies:
-            #     try:
-            #         if xpath.startswith(".//"):
-            #             field_checkbox = research_inner_popup.find_element(By.XPATH, xpath)
-            #         else:
-            #             field_checkbox = driver.find_element(By.XPATH, xpath)
-                    
-            #         print(f"✅ 使用策略 '{strategy}' 找到复选框")
-            #         break
-            #     except Exception as e:
-            #         print(f"⚠️ 策略 '{strategy}' 失败: {xpath}")
-            #         continue
-            
-            # if not field_checkbox:
-            #     print(f"❌ 找不到{field_name}的复选框")
-                
-            #     # 显示界面中所有可用的复选框
-            #     print("🔍 显示界面中所有复选框:")
-            #     all_checkboxes = research_inner_popup.find_elements(By.XPATH, ".//input[@type='checkbox']")
-            #     print(f"找到 {len(all_checkboxes)} 个复选框")
-                
-            #     for i, checkbox in enumerate(all_checkboxes[:15]):  # 显示前15个
-            #         try:
-            #             checkbox_value = checkbox.get_attribute('value')
-            #             # 尝试找到关联的文本
-            #             checkbox_id = checkbox.get_attribute('id')
-            #             if checkbox_id:
-            #                 try:
-            #                     label = driver.find_element(By.XPATH, f"//label[@for='{checkbox_id}']")
-            #                     label_text = label.text.strip()
-            #                 except:
-            #                     label_text = "无关联label"
-            #             else:
-            #                 label_text = "无ID"
-                        
-            #             print(f"  {i+1}. 值: '{checkbox_value}' | 文本: '{label_text}'")
-            #         except Exception as e:
-            #             print(f"  {i+1}. 错误: {str(e)}")
-                
-            #     if retry < RETRY_TIMES:
-            #         continue
-            #     else:
-            #         return False
             
             # 9. 选择复选框
             print(f"🖱️ 选择{field_name}复选框")
@@ -931,4 +750,5 @@ def main():
 
 
 if __name__ == "__main__":
+
     main()
