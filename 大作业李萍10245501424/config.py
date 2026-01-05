@@ -1,0 +1,11 @@
+# config.py
+
+TOTAL_CAPITAL = 1_000_000
+INIT_RATIO = 0.5
+
+RISK_FREE_RATE = 0.0  # 无风险利率
+
+# 策略默认参数
+PRICE_TRIGGER = 0.03
+TRADE_RATIO = 0.1
+MAX_POSITION_MULT = 2.0
