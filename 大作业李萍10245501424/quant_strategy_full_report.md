@@ -5,14 +5,13 @@
 
 本研究旨在设计一种基于价格波动的动态仓位管理策略，通过涨跌触发的分批买入或卖出，控制风险的同时优化组合表现，并与等权组合及沪深300指数进行对比分析，验证策略有效性
 
-好的，我帮你把这部分内容整理成**规范、层级清晰的 Markdown**，保留所有小节和编号，同时保证排版整洁、可直接用于作业或报告：
-
 ---
 
 ## 2 数据与方法
 
 ### 2.1 数据来源
 
+尝试过爬虫但是缺失值较多且爬取所占用时间长，最终采用Akshare获取数据。
 * 数据来源：AkShare 获取 A 股日线价格数据
 * 股票池：前 500 只活跃股票（按照最新市值排序）
 * 时间区间：2022-01-01 至 2023-12-31
@@ -31,6 +30,61 @@
   * 价格下跌 ≥ 5% → 分批加仓（加仓 5%），上限 2 倍初始仓位
 * **调仓频率**：每日
 * **仓位约束**：最小 0，最大 2 倍初始仓位
+
+## 1. 均值回归策略
+核心盈利逻辑，假设股价大幅波动后向价值中枢回归，当个股单日涨跌幅达设定阈值时，上涨超阈值则减持止盈，下跌超阈值则逢低加仓，每日逐票触发调仓。
+
+```python
+# 卖出逻辑（涨幅超阈值，止盈减持）
+if ret >= price_trigger:
+    target = max(pos_value * (1 - trade_ratio*2), 0)
+    cash += pos_value - target
+    positions[code] = target
+# 买入逻辑（跌幅超阈值，逢低加仓）
+elif ret <= -price_trigger:
+    target = min(pos_value * (1 + trade_ratio*2), max_position_mult * base_position_value)
+    cost = target - pos_value
+    if cash >= cost:
+        cash -= cost
+        positions[code] = target
+```
+
+## 2. 平稳期随机小幅微调策略
+股价波动未达阈值时，对仓位进行 ±5% 基准仓位的随机微调，模拟实盘交易行为，平滑净值曲线。
+
+```python
+else:
+    # 微调仓位 ±5% 基仓位
+    change = np.random.uniform(-0.05, 0.05) * base_position_value
+    target = min(max(pos_value + change, 0), max_position_mult * base_position_value)
+    delta = target - positions[code]
+    if delta > 0 and cash >= delta:
+        cash -= delta
+        positions[code] = target
+    elif delta < 0:
+        cash -= delta
+        positions[code] = target
+```
+
+## 3. 指标分析策略
+通过总收益率（衡量绝对盈利）、最大回撤（衡量极端风险）、夏普比率（衡量收益风险性价比）三大经典指标，客观评估策略表现。
+
+```python
+def performance_metrics(net_df: pd.DataFrame) -> dict:
+    daily_ret = net_df['net_value'].pct_change().dropna()
+    total_return = net_df['net_value'].iloc[-1] - 1
+    cum_max = net_df['net_value'].cummax()
+    drawdown = net_df['net_value'] / cum_max - 1
+    max_drawdown = drawdown.min()
+    sharpe = ((daily_ret.mean() - RISK_FREE_RATE / 252) / daily_ret.std() * np.sqrt(252)
+              if daily_ret.std() != 0 else 0)
+    metrics = {
+        'Total Return': total_return,
+        'Max Drawdown': max_drawdown,
+        'Sharpe Ratio': sharpe
+    }
+    return metrics
+```
 
 ---
 
